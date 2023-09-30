@@ -52,6 +52,7 @@ public Object drive;
     configureButtonBindings();
 
     // Configure default commands
+    //CPA Added SMAPLE
 /*     m_robotDrive.setDefaultCommand(new Drive_With_Joysticks(()-> -m_driverController.getLeftY(),
                                                             ()-> -m_driverController.getLeftX(), 
                                                             ()-> -m_driverController.getRightX(), 
