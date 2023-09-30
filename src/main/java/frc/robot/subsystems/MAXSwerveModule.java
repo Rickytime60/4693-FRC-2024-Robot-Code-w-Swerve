@@ -17,6 +17,8 @@ import com.revrobotics.AbsoluteEncoder;
 import com.revrobotics.RelativeEncoder;
 
 import frc.robot.Constants.ModuleConstants;
+ 
+
 
 public class MAXSwerveModule {
   private final CANSparkMax m_drivingSparkMax;
@@ -54,7 +56,8 @@ public class MAXSwerveModule {
     m_drivingPIDController.setFeedbackDevice(m_drivingEncoder);
     m_turningPIDController.setFeedbackDevice(m_turningEncoder);
 
-    
+    // Encoder positions for Shuffleboard
+    SmartDashboard.putNumber("Encoder position", m_turningEncoder.getPosition());
     
     // Apply position and velocity conversion factors for the driving encoder. The
     // native units for position and velocity are rotations and RPM, respectively,
@@ -111,6 +114,9 @@ public class MAXSwerveModule {
     m_chassisAngularOffset = chassisAngularOffset;
     m_desiredState.angle = new Rotation2d(m_turningEncoder.getPosition());
     m_drivingEncoder.setPosition(0);
+
+     
+    
   }
 
   /**
