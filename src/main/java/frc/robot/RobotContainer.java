@@ -52,8 +52,6 @@ public Object drive;
     configureButtonBindings();
 
     // Configure default commands
-    //CPA Added SMAPLE
-    //Break the code
 /*     m_robotDrive.setDefaultCommand(new Drive_With_Joysticks(()-> -m_driverController.getLeftY(),
                                                             ()-> -m_driverController.getLeftX(), 
                                                             ()-> -m_driverController.getRightX(), 
@@ -95,6 +93,8 @@ public Object drive;
                -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband),
                false, true),
               m_robotDrive));
+
+        //SmartDashboard.putBoolean(key:
   }
 
   
