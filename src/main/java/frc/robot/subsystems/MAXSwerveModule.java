@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -16,6 +17,8 @@ import com.revrobotics.AbsoluteEncoder;
 import com.revrobotics.RelativeEncoder;
 
 import frc.robot.Constants.ModuleConstants;
+ 
+
 
 public class MAXSwerveModule {
   private final CANSparkMax m_drivingSparkMax;
@@ -40,6 +43,9 @@ public class MAXSwerveModule {
     m_drivingSparkMax = new CANSparkMax(drivingCANId, MotorType.kBrushless);
     m_turningSparkMax = new CANSparkMax(turningCANId, MotorType.kBrushless);
 
+    //Shuffle board speed for driving motors
+    SmartDashboard.putNumber("Speed", ((RelativeEncoder) m_drivingSparkMax).getVelocity());
+
     // Factory reset, so we get the SPARKS MAX to a known state before configuring
     // them. This is useful in case a SPARK MAX is swapped out.
     m_drivingSparkMax.restoreFactoryDefaults();
@@ -53,6 +59,9 @@ public class MAXSwerveModule {
     m_drivingPIDController.setFeedbackDevice(m_drivingEncoder);
     m_turningPIDController.setFeedbackDevice(m_turningEncoder);
 
+    // Encoder positions for Shuffleboard
+    SmartDashboard.putNumber("Encoder position", m_turningEncoder.getPosition());
+    
     // Apply position and velocity conversion factors for the driving encoder. The
     // native units for position and velocity are rotations and RPM, respectively,
     // but we want meters and meters per second to use with WPILib's swerve APIs.
@@ -108,6 +117,9 @@ public class MAXSwerveModule {
     m_chassisAngularOffset = chassisAngularOffset;
     m_desiredState.angle = new Rotation2d(m_turningEncoder.getPosition());
     m_drivingEncoder.setPosition(0);
+
+     
+    
   }
 
   /**
