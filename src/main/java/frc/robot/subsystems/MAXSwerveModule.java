@@ -58,9 +58,6 @@ public class MAXSwerveModule {
     m_turningPIDController = m_turningSparkMax.getPIDController();
     m_drivingPIDController.setFeedbackDevice(m_drivingEncoder);
     m_turningPIDController.setFeedbackDevice(m_turningEncoder);
-
-    // Encoder positions for Shuffleboard
-    SmartDashboard.putNumber("Encoder position", m_turningEncoder.getPosition());
     
     // Apply position and velocity conversion factors for the driving encoder. The
     // native units for position and velocity are rotations and RPM, respectively,
