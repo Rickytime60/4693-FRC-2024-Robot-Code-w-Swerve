@@ -41,10 +41,7 @@ public class MAXSwerveModule {
    */
   public MAXSwerveModule(int drivingCANId, int turningCANId, double chassisAngularOffset) {
     m_drivingSparkMax = new CANSparkMax(drivingCANId, MotorType.kBrushless);
-    m_turningSparkMax = new CANSparkMax(turningCANId, MotorType.kBrushless);
-
-    //Shuffle board speed for driving motors
-    SmartDashboard.putNumber("Speed", ((RelativeEncoder) m_drivingSparkMax).getVelocity());
+    m_turningSparkMax = new CANSparkMax(turningCANId, MotorType.kBrushless)
 
     // Factory reset, so we get the SPARKS MAX to a known state before configuring
     // them. This is useful in case a SPARK MAX is swapped out.
