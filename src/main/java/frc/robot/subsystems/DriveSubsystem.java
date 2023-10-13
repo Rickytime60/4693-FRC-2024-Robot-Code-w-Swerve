@@ -74,7 +74,10 @@ public class DriveSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
+    //ShuffleBoard Feedback for Information
     SmartDashboard.putNumber("Gyro angle", invertGyro_Angle());
+    SmartDashboard.putNumberArray("Swerve Module Position", SwerveModulePosition[]);
+
     // Update the odometry in the periodic block
     m_odometry.update(
         Rotation2d.fromDegrees(invertGyro_Angle()),
