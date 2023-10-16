@@ -1,22 +1,22 @@
-# MAXSwerve Java Template v2023.1
+# 4693 FRC 2024 Robot Code w Swerve
 
-See [the online changelog](https://github.com/REVrobotics/MAXSwerve-Java-Template/blob/main/CHANGELOG.md) for information about updates to the template that may have been released since you created your project.
+## Versions
+
+* 1.0 Full Release is being worked on
+    The release will include fully working code for just the swerve drive and CAN bus. This code will not have code for systems or future revision of the robot due to things that are subject to change.
+
+* Versions will do full releases when a new part of the robot is completed.
+* Versions will do a partial release when improvements or bugs have been fixed
+  
+## Credits
+This code is based on the [MAXSwerve-Java-Template](https://github.com/REVrobotics/MAXSwerve-Java-Template) By:[REVrobotics](https://github.com/REVrobotics)
 
 ## Description
+This Code is for the 2024 4693 FRC Robot competing in competition for that year. 
 
-A template project for an FRC swerve drivetrain that uses REV MAXSwerve Modules.
-
-Note that this is meant to be used with a drivetrain composed of four MAXSwerve Modules, each configured with two SPARKS MAX, a NEO as the driving motor, a NEO 550 as the turning motor, and a REV Through Bore Encoder as the absolute turning encoder.
-
-To get started, make sure you have calibrated the zero offsets for the absolute encoders in the Hardware Client using the `Absolute Encoder` tab under the associated turning SPARK MAX devices.
-
-## Prerequisites
-
-* SPARK MAX Firmware v1.6.2 - Adds features that are required for swerve
-* REVLib v2023.1.2 - Includes APIs for the new firmware features
+Updates will be released throughout the 2024 FRC season.
 
 ## Configuration
 
-It is possible that this project will not work for your robot right out of the box. Various things like the CAN IDs, PIDF gains, chassis configuration, etc. must be determined for your own robot!
+Go to constants.java to configure parameters for the robot, like speeds, CAN IDs, and ECT.
 
-These values can be adjusted in the `Constants.java` file.
